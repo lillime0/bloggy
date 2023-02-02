@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+textarea {
+  resize: vertical;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding-block: 1em;
+  background: indigo;
+}
+.nav-title {
+  font-family: cursive;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar li {
+  margin-inline: 1em;
+}
+.nav :where(.navbar li > *, a) {
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+:where(.navbar li > *, a):hover {
+  color: pink;
+}
+.navbar button {
+  background: transparent;
+}
+.about {
+  width: clamp(200px, 80%, 500px);
+  margin-inline: auto;
+  margin-block-start: 2.5em;
+}
+.about h1 {
+  color: indigo;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.about p {
+  margin-block-start: 0.5em;
+  font-weight: 600;
+}
+.about span {
+  color: #ff1493;
+}
+.main {
+  width: 90%;
+  margin-inline: auto;
+}
+.post-container {
+  width: clamp(200px, 90%, 800px);
+  margin-inline: auto;
+  margin-block-start: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.post-sec {
+  padding: 1em;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+  margin: 0.8em;
+  width: min(300px, 80%);
+}
+.post-sec .title {
+  color: indigo;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.post-sec .title:where(:focus, :hover) {
+  text-decoration: underline;
+}
+.post-sec :where(.user, .content) {
+  margin-block-start: 0.3em;
+}
+.post-sec .user {
+  color: #ff1493;
+  font-style: italic;
+}
+.not-fount-sec {
+  width: 100%;
+  background: indigo;
+}
+.not-fount {
+  width: clamp(200px, 80%, 500px);
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #fff;
+}
+.not-fount h1 {
+  font-size: 4rem;
+  font-family: cursive;
+}
+.not-fount p {
+  margin-block-start: 1em;
+  font-size: 1.2rem;
+}
+.not-fount-btn,
+.update-form button {
+  margin-block-start: 2em;
+  padding: 0.5em 0.7em;
+  background: #fff;
+  color: indigo;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-inline: auto;
+  border-radius: 0.2rem;
+  border: 0.125rem solid transparent;
+}
+.not-fount-btn:where(:hover, :active, :focus),
+.update-form button:where(:hover, :active, :focus) {
+  border: 0.125rem solid #fff;
+  background: indigo;
+  color: #fff;
+}
+.error {
+  font-weight: bold;
+  color: #ff1493;
+}
+.post-details {
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+  width: clamp(200px, 70%, 500px);
+  margin-inline: auto;
+  margin-block-start: 3em;
+  padding: 2em 1em;
+  position: relative;
+}
+@media screen and (min-width: 400px) {
+  .post-details {
+    padding: 3em 2em;
+  }
+}
+.btn-container {
+  right: 1rem;
+  top: 1.5rem;
+  display: flex;
+  justify-content: end;
+}
+.btn {
+  margin-inline: 0.5em;
+  width: fit-content;
+  font-weight: bold;
+}
+.back-btn,
+.main button {
+  background: #eee;
+  color: #000;
+  padding: 0.3em 0.7em;
+  border-radius: 0.2rem;
+}
+.back-btn:where(:hover, :active, focus),
+.main button:where(:hover, :active, focus) {
+  background: indigo;
+  color: #fff;
+}
+.del-btn {
+  padding: 0.3em;
+  background: transparent;
+  color: #333;
+  font-size: 1.1rem;
+}
+.del-btn:where(:hover, :active, :focus) {
+  color: indigo;
+}
+.post-details h1 {
+  text-transform: uppercase;
+  margin-block-start: 1em;
+}
+.post-details :where(.name, .tag, .date) {
+  margin-block-start: 0.5em;
+}
+.post-details .name {
+  font-style: italic;
+  color: #222;
+}
+.post-details .tag {
+  background: #eee;
+  width: fit-content;
+}
+.post-details .date {
+  color: #444;
+}
+.post-details .meta {
+  display: flex;
+  justify-content: space-between;
+}
+.post-details .full-content {
+  margin-block-start: 0.8em;
+}
+.modal-container {
+  background: rgb(0 0 0 / 0.5);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  margin-block-start: 2em;
+  width: clamp(200px, 80%, 400px);
+  margin-inline: auto;
+  padding: 2em 1em;
+  background: #fff;
+  border-radius: 0.25rem;
+  position: relative;
+}
+@media screen and (min-width: 500px) {
+  .modal {
+    width: clamp(200px, 50%, 400px);
+  }
+}
+.modal .close-icon {
+  position: absolute;
+  color: #333;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+.modal .close-icon:where(:hover, :focus) {
+  color: indigo;
+}
+.modal h2 {
+  text-align: center;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 2em;
+}
+.modal :where(input, textarea, select, button),
+.update-form :where(input, textarea, select, button) {
+  margin-block: 0.7em;
+  padding: 0.5em;
+  border-radius: 0.2rem;
+  background: #eee;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.modal button {
+  width: fit-content;
+  padding: 0.5em 1em;
+  margin-inline: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: rgb(75 0 130 / 0.4);
+}
+.modal button:where(:hover, :active, :focus) {
+  background: indigo;
+  color: #fff;
+}
+::placeholder {
+  font-size: 1rem;
+}
+::selection {
+  background: rgb(76 0 130 / 0.5);
+  color: #fff;
+}
+.spinner {
+  font-size: 2rem;
+  color: indigo;
+}
+
+.update-form {
+  margin-block-start: 3em;
+  background: indigo;
+  border-radius: 0.25rem;
+  padding: 0.5em;
+}
+.update-form :where(h2, form) {
+  margin-block-start: 1em;
+}
+.update-form h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+.update-form form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  margin-inline: auto;
+}
+.update-form :where(input, text, select) {
+  background: #fff;
+  margin-block: 1em;
+}
+.update-form button {
+  font-size: 0.9rem;
+  margin-block-start: 1em;
+  padding: 0.3em 0.7em;
+}
+
+.main .filter-form {
+  margin-block-start: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main .filter-form > * {
+  margin: 0.5em;
+}
+.main button {
+  text-transform: uppercase;
+}
+.main .filter-form label {
+  color: indigo;
+}
+.main .filter-form select {
+  border: 0.12rem solid #eee;
+}

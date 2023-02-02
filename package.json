@@ -1,0 +1,23 @@
+{
+  "name": "Bloggy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "install-server": "npm install",
+    "install-client": "cd client && npm install",
+    "install-dependencies": " npm run install-client && npm run install-server ",
+    "build": "cd client && npm run build",
+    "server": "nodemon server --ignore client",
+    "client": "npm start --prefix client",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Lilli",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.10.0",
+    "graphql": "^16.5.0"
+  }
+}
